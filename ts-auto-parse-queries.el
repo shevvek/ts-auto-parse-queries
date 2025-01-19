@@ -1,4 +1,8 @@
-;; -*- lexical-binding: t -*-
+;;; ts-auto-parse-queries.el --- Parse Treesitter scm -*- lexical-binding: t -*-
+;; Convert Treesitter .scm query files into Emacs treesit font-lock rules
+;; SPDX-FileCopyrightText: Copyright (c) 2025 Saul James Tobin
+;; SPDX-License-Identifier: MIT
+
 (unless (package-installed-p 'pcre2el)
   (package-refresh-contents)
   (package-install 'pcre2el))
@@ -153,3 +157,4 @@
                                     "auto-ly-font-lock-rules.el")))))
 
 (provide 'ts-auto-parse-queries)
+;;; ts-auto-parse-queries.el ends here

@@ -119,12 +119,13 @@
              "default" nil
              (lambda (elcar key) (string-match-p elcar key))))
 
-(defun ts-auto-parse-queries (ts-ly-loc)
+(defun ts-auto-parse-queries (grammar-loc)
   (let ((out-names (mapcar #'cdr ts-auto-query-files))
         (selectors (mapcan (lambda (qfile)
-                             (translate-ts-query-file (file-name-concat ts-ly-loc
-                                                                        (car qfile))
-                                                      (cdr qfile)))
+                             (translate-ts-query-file
+                              (file-name-concat grammar-loc
+                                                (car qfile))
+                              (cdr qfile)))
                            ts-auto-query-files)))
     (with-temp-buffer
       (emacs-lisp-mode)
